@@ -1,0 +1,13 @@
+<div class="container">
+  <div id="search-users">
+    <div>
+      <img [src]="getFullPhotoUrl() | safe" height="200px" width="350px" alt="Oops! Something's broken"/> <br />
+      <div class="form-group">
+        <input type="file" name="image" (change)="onFileChanged($event)" class="form-control" placeholder="Image">
+      </div>
+      <label>Change your email here: </label><input style="margin-right: 15px; margin-left: 15px;" type="text" [(ngModel)]="typedEmail"> <br />
+      <label>Change your password here: </label><input style="margin-right: 15px; margin-left: 15px;" type="text" [(ngModel)]="typedPassword"> <br />
+      <button type="button" class="btn btn-primary" (click)="save()">Change</button>
+    </div>
+  </div>
+</div>

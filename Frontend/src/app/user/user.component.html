@@ -1,0 +1,33 @@
+<div class="container-fluid" *ngIf="this.visitedUser">
+  <div id="search-users">
+    <div>
+      <img [src]="getFullPhotoUrl() | safe" height="200px" width="350px" alt="Oops! Something's broken"/> <br />
+      <label *ngIf="!this.visitedUser.followers">Followers: 0</label>
+      <label *ngIf="this.visitedUser.followers">Followers: {{this.visitedUser.followers.length}}</label>
+      <label *ngIf="!this.visitedUser.following">Following: 0</label>
+      <label *ngIf="this.visitedUser.following">Following: {{this.visitedUser.following.length}}</label>
+      <label *ngIf="!this.visitedUser.posts">Posts: 0</label>
+      <label *ngIf="this.visitedUser.posts">Posts: {{this.visitedUser.posts.length}}</label>
+      <label *ngIf="!this.visitedUser.sharedPosts">Shared posts: 0</label>
+      <label *ngIf="this.visitedUser.sharedPosts">Shared posts: {{this.visitedUser.sharedPosts.length}}</label>
+    </div>
+    <div style="margin-top: -5px;">
+      <button type="button" class="btn-small btn-primary" (click)="followUser()">Follow</button> <span>|</span> <button type="button" class="btn-small btn-danger" (click)="unfollowUser()">Unfollow</button>
+    </div>
+    <hr>
+  </div>
+
+  <div class="container">
+    <h4>Posts:</h4>
+    <div class="col-md-6" *ngFor="let post of usersPosts" >
+      <img [src]="getPhotoUrl(post) | safe" height="200px" width="350px" alt="Oops! Something's broken"/> <br />
+      <hr>
+    </div>
+
+    <h4>Shared posts:</h4>
+    <div class="col-md-6" *ngFor="let post of sharedPosts" >
+      <img [src]="getPhotoUrl(post) | safe" height="200px" width="350px" alt="Oops! Something's broken"/> <br />
+      <hr>
+    </div>
+  </div>
+</div>

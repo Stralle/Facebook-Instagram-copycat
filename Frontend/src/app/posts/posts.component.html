@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h4>Type your comment here and click comment on a photo you would like to comment.</h4>
+  <div class="form-group">
+    <input [(ngModel)]="comment" type="text" name="comment" class="form-control" placeholder="Short comment type here!">
+  </div>
+  <hr>
+  <h4>Posts of users that you're following:</h4>
+  <div class="col-md-6" *ngFor="let post of followingUsersPosts" >
+    <label>{{post.user.username}}</label> <br/>
+    <img [src]="getFullPhotoUrl(post) | safe" height="200px" width="350px" alt="Oops! Something's broken"/> <br />
+    <label>Description: {{post.description}}</label> <br/>
+    <label>Likes: {{post.totalLikes}}   |  </label>
+    <label>Comments: {{post.totalComments}}</label><br/>
+    <button class="btn btn-lg btn-primary" (click)="likePhoto(post)">Like </button>
+    <button class="btn btn-lg btn-success" (click)="sharePhoto(post)">Share </button>
+    <button class="btn btn-lg btn-danger" (click)="commentPhoto(post)">Comment </button><br/>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div style="background-color: aqua" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li [routerLinkActive]="['active']"><a routerLink="/home">Home <span class="sr-only">(current)</span></a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/profile"><span *ngIf="this.loggedUser">{{this.loggedUser.username}}</span><span *ngIf="!this.loggedUser">Profile</span></a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/upload">New Post</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/search-users">Search</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/login">Login</a></li>
+        <li [routerLinkActive]="['active']"><a (click)="onLogoutClick()">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-md-6">
+      <form role="form">
+        <h1 style="color: blue; font-style: oblique">Sign Up/In</h1>
+        <div class="form-group">
+          <input [(ngModel)]="username" type="text" name="username" class="form-control" placeholder="Username - Only for new users!">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="email" type="text" name="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="password" type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input (click)="onLoginClick()" type="submit" class="btn btn-lg btn-primary" value="Sign In">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input (click)="onRegisterClick()" type="submit" class="btn btn-lg btn-success" value="Register">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

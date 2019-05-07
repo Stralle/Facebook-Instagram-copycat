@@ -1,0 +1,21 @@
+<div class="container">
+  <div id="search-users">
+    <div> Find user by username:
+      <input style="margin-right: 15px; margin-left: 15px;" type="text" [(ngModel)]="typedSearchbox">
+      <button type="button" class="btn btn-primary" (click)="search()">Search</button>
+    </div>
+
+    <div id="available-users" class="col-sm-6">
+      <h4>Found users:</h4>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" style="background-color: aqua;" *ngFor="let user of availableUsers">
+          <a (click)="goToUser(user)">{{ user.username }}</a>
+          <div style="float: right; margin-top: -5px;">
+            <button type="button" class="btn-small btn-primary" (click)="followUser(user)">Follow</button> <span>|</span> <button type="button" class="btn-small btn-danger" (click)="unfollowUser(user)">Unfollow</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
